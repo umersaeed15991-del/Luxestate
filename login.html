@@ -1,0 +1,191 @@
+<!-- login.html (Green + White Real Estate Theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        .error-popup-content {
+            width: 420px;
+            padding: 30px;
+            background: white;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0px 5px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 0.7s ease-in-out;
+        }
+        .error-popup-content i {
+            font-size: 70px;
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+        .error-popup-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .error-popup-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .error-popup-content .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .error-popup-content .btn:hover {
+            background: #218838;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="login-page-enter page-enter">
+
+<section class="auth-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="auth-card row g-0">
+                    <div class="col-lg-5 auth-visual slide-in-left" style="background-image: url('p6.jpg');">
+                        <div class="auth-visual-content">
+                            <span class="auth-pill"><i class="bi bi-shield-check"></i> Trusted since 2010</span>
+                            <h3>Experience Luxury Living</h3>
+                            <p>Access curated listings, schedule viewings, and work with expert agents.</p>
+                            <ul class="auth-features">
+                                <li><i class="bi bi-check-circle"></i> Verified premium properties</li>
+                                <li><i class="bi bi-check-circle"></i> Personalized recommendations</li>
+                                <li><i class="bi bi-check-circle"></i> Dedicated 24/7 support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 p-5 slide-in-right">
+                        <div class="d-flex justify-content-end small auth-links form-fade-in" style="animation-delay: 0.6s;">
+                            <span>New to LuxEstate? <a href="signup.html">Create account</a></span>
+                        </div>
+                        <div class="auth-form-header mt-2 form-fade-in" style="animation-delay: 0.8s;">
+                            <span class="badge">Welcome back</span>
+                            <h3>Login to LuxEstate</h3>
+                            <p>Enter your details to continue your real estate journey.</p>
+                        </div>
+                        <form class="mt-4" id="loginForm" action="dashboard.html" method="GET">
+                            <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1s;">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" class="form-control" id="loginEmail" name="Email_Address" placeholder="you@example.com">
+                                </div>
+                            </div>
+                            <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1.2s;">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                    <input type="password" class="form-control" id="loginPassword" name="Password" placeholder="Enter password">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4 form-fade-in" style="animation-delay: 1.4s;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="auth-links">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn w-100 login-btn-header-style form-fade-in" style="animation-delay: 1.6s;" id="loginBtn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Prevent back navigation on login page - completely disable back button
+    (function() {
+        // Replace current history entry to prevent back navigation
+        history.replaceState(null, null, location.href);
+        
+        // Add a new state to history
+        history.pushState(null, null, location.href);
+        
+        // Prevent back button - whenever user tries to go back, push state again
+        window.addEventListener('popstate', function(event) {
+            history.pushState(null, null, location.href);
+            // Optional: Show a message or do nothing
+        });
+        
+        // Also prevent on page load
+        window.addEventListener('load', function() {
+            history.replaceState(null, null, location.href);
+            history.pushState(null, null, location.href);
+        });
+        
+        // Prevent on DOMContentLoaded as well
+        document.addEventListener('DOMContentLoaded', function() {
+            history.replaceState(null, null, location.href);
+            history.pushState(null, null, location.href);
+        });
+    })();
+
+    // Handle page entry animation
+    window.addEventListener('load', function() {
+        // Remove any existing transition overlay
+        const existingOverlay = document.querySelector('.page-transition-overlay');
+        if (existingOverlay) {
+            existingOverlay.classList.add('exit');
+            setTimeout(() => {
+                existingOverlay.remove();
+            }, 600);
+        }
+    });
+
+    // Handle form submission - redirect to dashboard
+    window.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.getElementById('loginForm');
+        if (!loginForm) {
+            console.error('Login form not found!');
+            return;
+        }
+        
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Redirect to dashboard without validation
+            window.location.href = 'dashboard.html';
+        });
+    });
+
+
+</script>
+</body>
+</html>

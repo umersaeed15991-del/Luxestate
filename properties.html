@@ -1,0 +1,499 @@
+<!-- properties.html (Green + White Real Estate Theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Properties</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-3 shadow-sm bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 header-brand">
+            <img src="logo.svg" alt="LuxEstate logo" class="header-logo">
+            <h2 class="fw-bold text-success m-0">LuxEstate</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="mx-2 text-dark"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+            <div class="dropdown properties-dropdown">
+                <a href="properties.html" class="mx-2 text-dark dropdown-toggle" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-building me-1"></i> Properties <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                    <li><a class="dropdown-item" href="#" id="calculateBudgetBtn"><i class="bi bi-calculator"></i> Calculate Budget</a></li>
+                    <li><a class="dropdown-item" href="properties.html"><i class="bi bi-grid"></i> View All Properties</a></li>
+                </ul>
+            </div>
+            <div class="dropdown properties-dropdown">
+                <a href="agents.html" class="mx-2 text-dark dropdown-toggle" id="agentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people me-1"></i> Agents <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="agentsDropdown">
+                    <li><a class="dropdown-item" href="agents.html"><i class="bi bi-people"></i> All Agents</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope"></i> Book Your Agent</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1"></i> Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Personal Info</a></li>
+                    <li><a class="dropdown-item" href="edit-profile.html"><i class="bi bi-pencil-square me-2"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="api/logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown info-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-info-circle me-1"></i> Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+                    <li><a class="dropdown-item" href="inbox.html"><i class="bi bi-inbox me-2"></i> Inbox</a></li>
+                    <li><a class="dropdown-item" href="about.html"><i class="bi bi-building me-2"></i> About</a></li>
+                    <li><a class="dropdown-item" href="faqs.html"><i class="bi bi-question-circle me-2"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- PROPERTIES HERO -->
+<section class="agents-hero text-white text-center">
+    <div class="container position-relative">
+        <span class="badge rounded-pill bg-light text-success px-4 py-2 mb-3 text-uppercase">LuxEstate Experts</span>
+        <h1 class="display-4 fw-bold">Available Properties</h1>
+        <p class="lead mb-0">Explore our wide range of properties for sale and rent.</p>
+    </div>
+</section>
+
+<!-- PROPERTY LISTINGS -->
+<section class="py-5 scroll-animate">
+    <div class="container">
+        <!-- RENTAL PROPERTIES -->
+        <div class="mb-5 scroll-animate scroll-animate-delay-1">
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <i class="bi bi-house-door text-success" style="font-size: 2.5rem;"></i>
+                <div>
+                    <h2 class="fw-bold text-success mb-0" id="rentalProperties">Rental Properties</h2>
+                    <p class="text-muted mb-0">Properties available for rent</p>
+                </div>
+        </div>
+        <div class="row g-3">
+                <!-- Rental Property 1 - 1 Bedroom -->
+            <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-2">
+                <div class="card shadow-sm property-card h-100">
+                        <img src="p2.jpg" class="card-img-top" alt="City Apartment">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">City Apartment</h5>
+                            <p class="property-price">$2,100/month</p>
+                            <p class="card-text">Skyline apartment located downtown with concierge service and gym.</p>
+                            <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 1 Bed</span>
+                                <span><i class="bi bi-droplet"></i> 1 Bath</span>
+                                <span><i class="bi bi-rulers"></i> 800 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p2" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Property 2 - 2 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-3">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p3.jpg" class="card-img-top" alt="Cozy House">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Cozy House</h5>
+                            <p class="property-price">$2,750/month</p>
+                            <p class="card-text">Warm, tranquil family home with open-plan kitchen and play area.</p>
+                            <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 2 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 2 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 1,200 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p3" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Property 3 - 3 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-4">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p7.jpg" class="card-img-top" alt="Urban Loft">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Urban Loft</h5>
+                            <p class="property-price">$3,050/month</p>
+                            <p class="card-text">Industrial loft with double-height ceilings, office nook, and terrace.</p>
+                            <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 3 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 2 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 1,600 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p7" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Property 4 - 4 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-5">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p8.jpg" class="card-img-top" alt="Mountain Cabin">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Mountain Cabin</h5>
+                            <p class="property-price">$2,400/month</p>
+                            <p class="card-text">Rustic cabin retreat with fireplace lounge and wraparound deck.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 4 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 3 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,200 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p8" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Property 5 - 5 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-6">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p10.jpg" class="card-img-top" alt="Garden Duplex">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Garden Duplex</h5>
+                            <p class="property-price">$3,200/month</p>
+                            <p class="card-text">Sunlit duplex with private courtyard, glass stairway, and studio.</p>
+                            <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 5 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 4 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,800 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p10" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- INSTALLMENT PROPERTIES -->
+        <div class="mb-5 scroll-animate scroll-animate-delay-1">
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <i class="bi bi-calendar-check text-success" style="font-size: 2.5rem;"></i>
+                <div>
+                    <h2 class="fw-bold text-success mb-0" id="installmentsProperties">Installment Properties</h2>
+                    <p class="text-muted mb-0">Properties available on installment plans</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                <!-- Installment Property 1 - 1 Bedroom -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-2">
+                <div class="card shadow-sm property-card h-100">
+                    <img src="p2.jpg" class="card-img-top" alt="City Apartment">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-success fw-bold">City Apartment</h5>
+                        <p class="property-price">$420,000</p>
+                        <p class="card-text">Skyline apartment located downtown with concierge service and gym.</p>
+                        <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 1 Bed</span>
+                                <span><i class="bi bi-droplet"></i> 1 Bath</span>
+                                <span><i class="bi bi-rulers"></i> 800 sqft</span>
+                        </div>
+                        <a href="property-details.html?id=p2" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Installment Property 2 - 2 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-3">
+                <div class="card shadow-sm property-card h-100">
+                    <img src="p3.jpg" class="card-img-top" alt="Cozy House">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-success fw-bold">Cozy House</h5>
+                        <p class="property-price">$550,000</p>
+                        <p class="card-text">Warm, tranquil family home with open-plan kitchen and play area.</p>
+                        <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 2 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 2 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 1,200 sqft</span>
+                        </div>
+                        <a href="property-details.html?id=p3" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Installment Property 3 - 3 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-4">
+                <div class="card shadow-sm property-card h-100">
+                        <img src="p1.jpg" class="card-img-top" alt="Modern Villa">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Modern Villa</h5>
+                            <p class="property-price">$850,000</p>
+                            <p class="card-text">Luxury villa with a curated garden, infinity pool, and sunlit living spaces.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 3 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 3 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,000 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p1" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Installment Property 4 - 4 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-5">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p9.jpg" class="card-img-top" alt="Smart Townhouse">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Smart Townhouse</h5>
+                            <p class="property-price">$720,000</p>
+                            <p class="card-text">Modern townhouse featuring smart home controls and rooftop patio.</p>
+                            <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 4 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 3 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,400 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p9" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Installment Property 5 - 5 Bedrooms -->
+            <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-6">
+                <div class="card shadow-sm property-card h-100">
+                    <img src="p5.jpg" class="card-img-top" alt="Country Estate">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-success fw-bold">Country Estate</h5>
+                        <p class="property-price">$950,000</p>
+                        <p class="card-text">Expansive estate set on 2 acres including guest house and orchard.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 5 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 4 Baths</span>
+                            <span><i class="bi bi-rulers"></i> 4,200 sqft</span>
+                        </div>
+                        <a href="property-details.html?id=p5" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- FULL PAYMENT PROPERTIES -->
+        <div class="mb-5 scroll-animate scroll-animate-delay-1">
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <i class="bi bi-cash-coin text-success" style="font-size: 2.5rem;"></i>
+                <div>
+                    <h2 class="fw-bold text-success mb-0" id="fullpayproperties">Full Payment Properties</h2>
+                    <p class="text-muted mb-0">Properties available for full payment</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                <!-- Full Payment Property 1 - 1 Bedroom -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-2">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p2.jpg" class="card-img-top" alt="City Apartment">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">City Apartment</h5>
+                            <p class="property-price">$420,000</p>
+                            <p class="card-text">Skyline apartment located downtown with concierge service and gym.</p>
+                        <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 1 Bed</span>
+                                <span><i class="bi bi-droplet"></i> 1 Bath</span>
+                                <span><i class="bi bi-rulers"></i> 800 sqft</span>
+                        </div>
+                            <a href="property-details.html?id=p2" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Full Payment Property 2 - 2 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-3">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p3.jpg" class="card-img-top" alt="Cozy House">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Cozy House</h5>
+                            <p class="property-price">$550,000</p>
+                            <p class="card-text">Warm, tranquil family home with open-plan kitchen and play area.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 2 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 2 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 1,200 sqft</span>
+                        </div>
+                            <a href="property-details.html?id=p3" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Full Payment Property 3 - 3 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-4">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p1.jpg" class="card-img-top" alt="Modern Villa">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Modern Villa</h5>
+                            <p class="property-price">$850,000</p>
+                            <p class="card-text">Luxury villa with a curated garden, infinity pool, and sunlit living spaces.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 3 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 3 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,000 sqft</span>
+                        </div>
+                            <a href="property-details.html?id=p1" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Full Payment Property 4 - 4 Bedrooms -->
+                <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-5">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p4.jpg" class="card-img-top" alt="Luxury Penthouse">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Luxury Penthouse</h5>
+                            <p class="property-price">$1,200,000</p>
+                            <p class="card-text">Panoramic penthouse with private elevator, rooftop lounge, and spa.</p>
+                        <div class="property-details">
+                            <span><i class="bi bi-door-open"></i> 4 Beds</span>
+                            <span><i class="bi bi-droplet"></i> 3 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 2,800 sqft</span>
+                        </div>
+                            <a href="property-details.html?id=p4" class="btn btn-success w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Full Payment Property 5 - 5 Bedrooms -->
+            <div class="col-md-6 col-lg-4 scroll-animate scroll-animate-delay-6">
+                    <div class="card shadow-sm property-card h-100">
+                        <img src="p6.jpg" class="card-img-top" alt="Beachfront Villa">
+                    <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold">Beachfront Villa</h5>
+                            <p class="property-price">$1,500,000</p>
+                            <p class="card-text">Exclusive villa with private sand access, cabanas, and infinity pool.</p>
+                        <div class="property-details">
+                                <span><i class="bi bi-door-open"></i> 5 Beds</span>
+                                <span><i class="bi bi-droplet"></i> 4 Baths</span>
+                                <span><i class="bi bi-rulers"></i> 3,800 sqft</span>
+                            </div>
+                            <a href="property-details.html?id=p6" class="btn btn-success w-100 mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="contact.html" class="btn btn-success btn-lg px-5">Talk with an Agent</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <h5><i class="bi bi-house-heart-fill"></i> LuxEstate</h5>
+                <p>Your premier destination for luxury real estate. We connect you with extraordinary properties that match your lifestyle and aspirations.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkdin.com" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h5><i class="bi bi-lightning-fill"></i> Quick Links</h5>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                    <li><a href="properties.html"><i class="bi bi-grid-3x2"></i> Properties</a></li>
+                    <li><a href="about.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+                    <li><a href="agents.html"><i class="bi bi-people"></i> Our Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h5><i class="bi bi-briefcase-fill"></i> Services</h5>
+                <ul>
+                    <li><a href="properties.html#fullpayproperties"><i class="bi bi-house-fill"></i>Properties sale in full payment</a></li>
+                    <li><a href="properties.html#installmentsProperties"><i class="bi bi-house-fill"></i>Properties sale in Installments</a></li>
+                    <li><a href="properties.html#rentalProperties"><i class="bi bi-key-fill"></i> Property Rentals</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#budgetCalculatorModal"><i class="bi bi-graph-up-arrow"></i> Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Support -->
+            <div class="footer-section">
+                <h5 style="font-size: 1rem;"><i class="bi bi-telephone-fill"></i> Contact Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/923007323288" target="_blank" style="font-size: 0.85rem;"><i class="bi bi-telephone"></i> +92 3007323288</a></li>
+                    <li><a href="mailto:umersaeed15991@gmail.com" style="font-size: 0.85rem;"><i class="bi bi-envelope"></i> umersaeed15991@gmail.com</a></li>
+                    <li><a href="contact.html" style="font-size: 0.85rem;"><i class="bi bi-chat-dots"></i> Send Message</a></li>
+                    <li><a href="faqs.html" style="font-size: 0.85rem;"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 LuxEstate. All Rights Reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-badge"><i class="bi bi-star-fill"></i> Trusted Since 2010</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Budget Calculator Modal -->
+<div class="modal fade" id="budgetCalculatorModal"  tabindex="-1" aria-labelledby="budgetCalculatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="budgetCalculatorModalLabel"><i class="bi bi-calculator"></i> Budget Calculator</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="text-center mb-4">
+                        <p class="lead">How would you like to pay?</p>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="installments">
+                            <i class="bi bi-calendar-check me-2"></i>Installments
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="full-payment">
+                            <i class="bi bi-cash-coin me-2"></i>Full Payment
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="rent">
+                            <i class="bi bi-house-door me-2"></i>Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Handle payment option selection
+    document.querySelectorAll('.payment-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const paymentType = this.getAttribute('data-type');
+            window.location.href = `budget-form.html?type=${paymentType}`;
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!-- budget-form.html - Budget Form Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Budget Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-3 shadow-sm bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 header-brand">
+            <img src="logo.svg" alt="LuxEstate logo" class="header-logo">
+            <h2 class="fw-bold text-success m-0">LuxEstate</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="mx-2 text-dark"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+            <div class="dropdown properties-dropdown">
+                <a href="properties.html" class="mx-2 text-dark dropdown-toggle" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-building me-1"></i> Properties <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                    <li><a class="dropdown-item" href="#" id="calculateBudgetBtn"><i class="bi bi-calculator"></i> Calculate Budget</a></li>
+                    <li><a class="dropdown-item" href="properties.html"><i class="bi bi-grid"></i> View All Properties</a></li>
+                </ul>
+            </div>
+            <div class="dropdown properties-dropdown">
+                <a href="agents.html" class="mx-2 text-dark dropdown-toggle" id="agentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people me-1"></i> Agents <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="agentsDropdown">
+                    <li><a class="dropdown-item" href="agents.html"><i class="bi bi-people"></i> All Agents</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope"></i> Book Your Agent</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1"></i> Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Personal Info</a></li>
+                    <li><a class="dropdown-item" href="edit-profile.html"><i class="bi bi-pencil-square me-2"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="api/logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown info-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-info-circle me-1"></i> Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+                    <li><a class="dropdown-item" href="inbox.html"><i class="bi bi-inbox me-2"></i> Inbox</a></li>
+                    <li><a class="dropdown-item" href="about.html"><i class="bi bi-building me-2"></i> About</a></li>
+                    <li><a class="dropdown-item" href="faqs.html"><i class="bi bi-question-circle me-2"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- BUDGET FORM HERO -->
+<section class="agents-hero text-white text-center">
+    <div class="container position-relative">
+        <span class="badge rounded-pill bg-light text-success px-4 py-2 mb-3 text-uppercase">Tell Us About Yourself</span>
+        <h1 class="display-4 fw-bold">Budget Information</h1>
+        <p class="lead mb-0">Fill in your details and we'll suggest the perfect properties for you.</p>
+    </div>
+</section>
+
+<!-- BUDGET FORM -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <div class="mb-3">
+                                <i class="bi bi-calculator text-success" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="fw-bold text-success mb-2">Payment Type Selected</h3>
+                            <p class="text-muted" id="paymentTypeDisplay">Installments</p>
+                        </div>
+                        
+                        <form id="budgetForm">
+                            <div class="mb-4">
+                                <label for="fullName" class="form-label fw-bold text-success">Full Name</label>
+                                <input type="text" class="form-control form-control-lg" id="fullName" placeholder="Enter your full name" required style="border-color: #2ecc71;">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phoneNumber" class="form-label fw-bold text-success">Phone Number</label>
+                                <input type="tel" class="form-control form-control-lg" id="phoneNumber" placeholder="+1 (555) 123-4567" required style="border-color: #2ecc71;">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-bold text-success">Email Address</label>
+                                <input type="email" class="form-control form-control-lg" id="email" placeholder="your.email@example.com" required style="border-color: #2ecc71;">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="budget" class="form-label fw-bold text-success">Budget ($)</label>
+                                <input type="number" class="form-control form-control-lg" id="budget" placeholder="Enter your budget" required min="0" style="border-color: #2ecc71;">
+                                <small class="text-muted">Enter your maximum budget for property purchase/rent</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="location" class="form-label fw-bold text-success">Preferred Location</label>
+                                <input type="text" class="form-control form-control-lg" id="location" placeholder="City, State" style="border-color: #2ecc71;">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="propertyType" class="form-label fw-bold text-success">Property Type</label>
+                                <select class="form-select form-select-lg" id="propertyType" style="border-color: #2ecc71;">
+                                    <option value="">Any Type</option>
+                                    <option value="house">House</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="penthouse">Penthouse</option>
+                                    <option value="townhouse">Townhouse</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="bedrooms" class="form-label fw-bold text-success">Number of Bedrooms</label>
+                                <select class="form-select form-select-lg" id="bedrooms" style="border-color: #2ecc71;">
+                                    <option value="">Any</option>
+                                    <option value="1">1 Bedroom</option>
+                                    <option value="2">2 Bedrooms</option>
+                                    <option value="3">3 Bedrooms</option>
+                                    <option value="4">4 Bedrooms</option>
+                                    <option value="5+">5+ Bedrooms</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-bold text-success">Additional Requirements (Optional)</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Any specific requirements or preferences..." style="border-color: #2ecc71;"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success btn-lg w-100 fw-bold" style="background: linear-gradient(135deg, #2ecc71, #27ae60); border: none; padding: 12px;">
+                                <i class="bi bi-search me-2"></i>Find Properties
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUGGESTED PROPERTIES SECTION (Hidden initially) -->
+<section class="py-5" id="suggestedProperties" style="display: none;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-success">Properties Matching Your Budget</h2>
+            <p class="text-muted lead">Here are properties that fit your requirements</p>
+        </div>
+        <div class="row g-4" id="propertiesContainer">
+            <!-- Properties will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <h5><i class="bi bi-house-heart-fill"></i> LuxEstate</h5>
+                <p>Your premier destination for luxury real estate. We connect you with extraordinary properties that match your lifestyle and aspirations.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkdin.com" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h5><i class="bi bi-lightning-fill"></i> Quick Links</h5>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                    <li><a href="properties.html"><i class="bi bi-grid-3x2"></i> Properties</a></li>
+                    <li><a href="about.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+                    <li><a href="agents.html"><i class="bi bi-people"></i> Our Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h5><i class="bi bi-briefcase-fill"></i> Services</h5>
+                <ul>
+                    <li><a href="properties.html#fullpayproperties"><i class="bi bi-house-fill"></i>Properties sale in full payment</a></li>
+                    <li><a href="properties.html#installmentsProperties"><i class="bi bi-house-fill"></i>Properties sale in Installments</a></li>
+                    <li><a href="properties.html#rentalProperties"><i class="bi bi-key-fill"></i> Property Rentals</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#budgetCalculatorModal"><i class="bi bi-graph-up-arrow"></i> Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Support -->
+            <div class="footer-section">
+                <h5 style="font-size: 1rem;"><i class="bi bi-telephone-fill"></i> Contact Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/923007323288" target="_blank" style="font-size: 0.85rem;"><i class="bi bi-telephone"></i> +92 3007323288</a></li>
+                    <li><a href="mailto:umersaeed15991@gmail.com" style="font-size: 0.85rem;"><i class="bi bi-envelope"></i> umersaeed15991@gmail.com</a></li>
+                    <li><a href="contact.html" style="font-size: 0.85rem;"><i class="bi bi-chat-dots"></i> Send Message</a></li>
+                    <li><a href="faqs.html" style="font-size: 0.85rem;"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 LuxEstate. All Rights Reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-badge"><i class="bi bi-star-fill"></i> Trusted Since 2010</div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Get payment type from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentType = urlParams.get('type') || 'installments';
+    
+    // Display payment type
+    const paymentTypeDisplay = {
+        'installments': 'Installments',
+        'full-payment': 'Full Payment',
+        'rent': 'Rent'
+    };
+    document.getElementById('paymentTypeDisplay').textContent = paymentTypeDisplay[paymentType] || 'Installments';
+    
+    // Store payment type in hidden field
+    const paymentTypeInput = document.createElement('input');
+    paymentTypeInput.type = 'hidden';
+    paymentTypeInput.id = 'paymentType';
+    paymentTypeInput.value = paymentType;
+    document.getElementById('budgetForm').appendChild(paymentTypeInput);
+    
+    // Handle form submission
+    document.getElementById('budgetForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('fullName').value,
+            phone: document.getElementById('phoneNumber').value,
+            email: document.getElementById('email').value,
+            budget: parseFloat(document.getElementById('budget').value),
+            location: document.getElementById('location').value,
+            propertyType: document.getElementById('propertyType').value,
+            bedrooms: document.getElementById('bedrooms').value,
+            message: document.getElementById('message').value,
+            paymentType: paymentType
+        };
+        
+        // Show suggested properties
+        showSuggestedProperties(formData);
+        
+        // Scroll to properties section
+        document.getElementById('suggestedProperties').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Properties data - Organized by category with 1-5 bedrooms
+    const rentalProperties = [
+        { id: 'p2', name: 'City Apartment', price: 420000, image: 'p2.jpg', beds: 1, baths: 1, sqft: 800, category: 'rent' },
+        { id: 'p3', name: 'Cozy House', price: 550000, image: 'p3.jpg', beds: 2, baths: 2, sqft: 1200, category: 'rent' },
+        { id: 'p7', name: 'Urban Loft', price: 610000, image: 'p7.jpg', beds: 3, baths: 2, sqft: 1600, category: 'rent' },
+        { id: 'p8', name: 'Mountain Cabin', price: 480000, image: 'p8.jpg', beds: 4, baths: 3, sqft: 2200, category: 'rent' },
+        { id: 'p10', name: 'Garden Duplex', price: 640000, image: 'p10.jpg', beds: 5, baths: 4, sqft: 2800, category: 'rent' }
+    ];
+    
+    const installmentProperties = [
+        { id: 'p2', name: 'City Apartment', price: 420000, image: 'p2.jpg', beds: 1, baths: 1, sqft: 800, category: 'installments' },
+        { id: 'p3', name: 'Cozy House', price: 550000, image: 'p3.jpg', beds: 2, baths: 2, sqft: 1200, category: 'installments' },
+        { id: 'p1', name: 'Modern Villa', price: 850000, image: 'p1.jpg', beds: 3, baths: 3, sqft: 2000, category: 'installments' },
+        { id: 'p9', name: 'Smart Townhouse', price: 720000, image: 'p9.jpg', beds: 4, baths: 3, sqft: 2400, category: 'installments' },
+        { id: 'p5', name: 'Country Estate', price: 950000, image: 'p5.jpg', beds: 5, baths: 4, sqft: 4200, category: 'installments' }
+    ];
+    
+    const fullPaymentProperties = [
+        { id: 'p2', name: 'City Apartment', price: 420000, image: 'p2.jpg', beds: 1, baths: 1, sqft: 800, category: 'full-payment' },
+        { id: 'p3', name: 'Cozy House', price: 550000, image: 'p3.jpg', beds: 2, baths: 2, sqft: 1200, category: 'full-payment' },
+        { id: 'p1', name: 'Modern Villa', price: 850000, image: 'p1.jpg', beds: 3, baths: 3, sqft: 2000, category: 'full-payment' },
+        { id: 'p4', name: 'Luxury Penthouse', price: 1200000, image: 'p4.jpg', beds: 4, baths: 3, sqft: 2800, category: 'full-payment' },
+        { id: 'p6', name: 'Beachfront Villa', price: 1500000, image: 'p6.jpg', beds: 5, baths: 4, sqft: 3800, category: 'full-payment' }
+    ];
+    
+    function showSuggestedProperties(formData) {
+        const budget = formData.budget;
+        const selectedBedrooms = formData.bedrooms;
+        const container = document.getElementById('propertiesContainer');
+        container.innerHTML = '';
+        
+        // Get properties based on payment type
+        let propertiesToFilter = [];
+        if (formData.paymentType === 'rent') {
+            propertiesToFilter = rentalProperties;
+        } else if (formData.paymentType === 'full-payment') {
+            propertiesToFilter = fullPaymentProperties;
+        } else {
+            propertiesToFilter = installmentProperties;
+        }
+        
+        // Filter properties based on budget and bedrooms
+        let filteredProperties = propertiesToFilter.filter(prop => {
+            // Budget filter
+            let budgetMatch = false;
+            if (formData.paymentType === 'rent') {
+                // For rent, assume monthly rent is about 0.5% of property value
+                budgetMatch = (prop.price * 0.005) <= budget;
+            } else {
+                // For purchase, show properties within budget or up to 20% above
+                budgetMatch = prop.price <= (budget * 1.2);
+            }
+            
+            // Bedrooms filter (if selected)
+            let bedroomsMatch = true;
+            if (selectedBedrooms && selectedBedrooms !== '') {
+                if (selectedBedrooms === '5+') {
+                    bedroomsMatch = prop.beds >= 5;
+                } else {
+                    bedroomsMatch = prop.beds === parseInt(selectedBedrooms);
+                }
+            }
+            
+            return budgetMatch && bedroomsMatch;
+        });
+        
+        // Sort by price (closest to budget first)
+        filteredProperties.sort((a, b) => {
+            if (formData.paymentType === 'rent') {
+                return Math.abs((a.price * 0.005) - budget) - Math.abs((b.price * 0.005) - budget);
+            } else {
+                return Math.abs(a.price - budget) - Math.abs(b.price - budget);
+            }
+        });
+        
+        // Limit to 5 properties
+        filteredProperties = filteredProperties.slice(0, 5);
+        
+        if (filteredProperties.length === 0) {
+            container.innerHTML = `
+                <div class="col-12">
+                    <div class="alert alert-info text-center">
+                        <i class="bi bi-info-circle" style="font-size: 3rem;"></i>
+                        <h4 class="mt-3">No properties found</h4>
+                        <p>We couldn't find properties matching your budget${selectedBedrooms ? ' and bedroom requirements' : ''}. Please try adjusting your criteria or contact us for assistance.</p>
+                        <a href="contact.html" class="btn btn-success mt-3">Contact Us</a>
+                    </div>
+                </div>
+            `;
+        } else {
+            filteredProperties.forEach(prop => {
+                const priceDisplay = formData.paymentType === 'rent' 
+                    ? `$${(prop.price * 0.005).toLocaleString()}/month` 
+                    : `$${prop.price.toLocaleString()}`;
+                
+                const card = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm property-card h-100">
+                            <img src="${prop.image}" class="card-img-top" alt="${prop.name}">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-success fw-bold">${prop.name}</h5>
+                                <p class="property-price">${priceDisplay}</p>
+                                <div class="property-details">
+                                    <span><i class="bi bi-door-open"></i> ${prop.beds} Beds</span>
+                                    <span><i class="bi bi-droplet"></i> ${prop.baths} Baths</span>
+                                    <span><i class="bi bi-rulers"></i> ${prop.sqft.toLocaleString()} sqft</span>
+                                </div>
+                                <a href="property-details.html?id=${prop.id}" class="btn btn-success w-100 mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+        
+        // Show the section
+        document.getElementById('suggestedProperties').style.display = 'block';
+    }
+    
+    // Budget Calculator button handler
+    document.getElementById('calculateBudgetBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modal = new bootstrap.Modal(document.getElementById('budgetCalculatorModal'));
+        modal.show();
+    });
+</script>
+
+<!-- Budget Calculator Modal -->
+<div class="modal fade" id="budgetCalculatorModal" tabindex="-1" aria-labelledby="budgetCalculatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="budgetCalculatorModalLabel"><i class="bi bi-calculator"></i> Budget Calculator</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="text-center mb-4">
+                        <p class="lead">How would you like to pay?</p>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="installments">
+                            <i class="bi bi-calendar-check me-2"></i>Installments
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="full-payment">
+                            <i class="bi bi-cash-coin me-2"></i>Full Payment
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="rent">
+                            <i class="bi bi-house-door me-2"></i>Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle payment option selection
+    document.querySelectorAll('.payment-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const paymentType = this.getAttribute('data-type');
+            window.location.href = `budget-form.html?type=${paymentType}`;
+        });
+    });
+</script>
+
+</body>
+</html>
+

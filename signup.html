@@ -1,0 +1,157 @@
+<!-- signup.html (Green + White Real Estate Theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="auth-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="auth-card row g-0">
+                    <div class="col-lg-5 auth-visual slide-in-left" style="background-image: url('p4.jpg');">
+                        <div class="auth-visual-content">
+                            <span class="auth-pill"><i class="bi bi-stars"></i> Join the elite</span>
+                            <h3>Unlock Exclusive Properties</h3>
+                            <p>Become a member to access premium listings, VIP events, and investment insights.</p>
+                            <ul class="auth-features">
+                                <li><i class="bi bi-check-circle"></i> Priority property alerts</li>
+                                <li><i class="bi bi-check-circle"></i> Direct access to agents</li>
+                                <li><i class="bi bi-check-circle"></i> Tailored property matches</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 p-5 slide-in-right">
+                        <div class="d-flex justify-content-end small auth-links form-fade-in" style="animation-delay: 0.6s;">
+                            <span>Already have an account? <a href="login.html">Log in</a></span>
+                        </div>
+                        <div class="auth-form-header mt-2 form-fade-in" style="animation-delay: 0.8s;">
+                            <span class="badge">Create account</span>
+                            <h3>Get started with LuxEstate</h3>
+                            <p>Tell us about yourself to personalize your home search experience.</p>
+                        </div>
+                        <form class="mt-4" action="api/user/signup_process.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1s;">
+                                        <label for="signupName" class="form-label">Full name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                            <input type="text" class="form-control" name="Name" placeholder="Umer Saeed" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1.1s;">
+                                        <label for="signupPhone" class="form-label">Phone number</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                            <input type="tel" class="form-control" id="signupPhone" name="Phone_Number" placeholder="03007323288" maxlength="11" pattern="[0-9]{11}" required>
+                                        </div>
+                                        <div class="invalid-feedback" id="phoneError" style="display: none;">
+                                            Please enter exactly 11 digits (numbers only)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1.2s;">
+                                        <label for="signupEmail" class="form-label">Email address</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                            <input type="email" class="form-control" name="Email_Address" placeholder="you@example.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1.3s;">
+                                        <label for="signupPassword" class="form-label">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                            <input type="password" class="form-control" name="Password" placeholder="Create password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="auth-input mb-3 form-fade-in" style="animation-delay: 1.5s;">
+                                        <label for="propertyInterest" class="form-label">I'm interested in</label>
+                                        <select name="Interested_Property" class="form-select">
+                                            <option selected>Luxury Homes</option>
+                                            <option>City Apartments</option>
+                                            <option>Beachfront Villas</option>
+                                            <option>Investment Properties</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-check mb-4 form-fade-in" style="animation-delay: 1.6s;">
+                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the <a href="#" class="auth-links">Terms &amp; Privacy Policy</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn w-100 login-btn-header-style form-fade-in" style="animation-delay: 1.8s;">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Phone number validation
+    document.getElementById('signupPhone').addEventListener('input', function(e) {
+        // Remove any non-numeric characters
+        let value = e.target.value.replace(/\D/g, '');
+        
+        // Limit to 11 digits
+        if (value.length > 11) {
+            value = value.substring(0, 11);
+        }
+        
+        // Update the input value
+        e.target.value = value;
+        
+        // Validate and show error
+        const phoneError = document.getElementById('phoneError');
+        if (value.length > 0 && value.length !== 11) {
+            e.target.classList.add('is-invalid');
+            phoneError.style.display = 'block';
+        } else {
+            e.target.classList.remove('is-invalid');
+            phoneError.style.display = 'none';
+        }
+    });
+
+    // Validate on form submit
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const phoneInput = document.getElementById('signupPhone');
+        const phoneValue = phoneInput.value.replace(/\D/g, '');
+        
+        if (phoneValue.length !== 11) {
+            e.preventDefault();
+            phoneInput.classList.add('is-invalid');
+            document.getElementById('phoneError').style.display = 'block';
+            phoneInput.focus();
+            return false;
+        }
+    });
+</script>
+</body>
+</html>

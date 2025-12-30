@@ -1,0 +1,456 @@
+<!-- agents.html (LuxEstate Agent Directory) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Meet Our Agents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-3 shadow-sm bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 header-brand">
+            <img src="logo.svg" alt="LuxEstate logo" class="header-logo">
+            <h2 class="fw-bold text-success m-0">LuxEstate</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="mx-2 text-dark"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+            <div class="dropdown properties-dropdown">
+                <a href="properties.html" class="mx-2 text-dark dropdown-toggle" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-building me-1"></i> Properties <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                    <li><a class="dropdown-item" href="#" id="calculateBudgetBtn"><i class="bi bi-calculator"></i> Calculate Budget</a></li>
+                    <li><a class="dropdown-item" href="properties.html"><i class="bi bi-grid"></i> View All Properties</a></li>
+                </ul>
+            </div>
+            <div class="dropdown properties-dropdown">
+                <a href="agents.html" class="mx-2 text-success fw-bold dropdown-toggle" id="agentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people me-1"></i> Agents <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="agentsDropdown">
+                    <li><a class="dropdown-item" href="agents.html"><i class="bi bi-people"></i> All Agents</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope"></i> Book Your Agent</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1"></i> Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Personal Info</a></li>
+                    <li><a class="dropdown-item" href="edit-profile.html"><i class="bi bi-pencil-square me-2"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="api/logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown info-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-info-circle me-1"></i> Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+                    <li><a class="dropdown-item" href="inbox.html"><i class="bi bi-inbox me-2"></i> Inbox</a></li>
+                    <li><a class="dropdown-item" href="about.html"><i class="bi bi-building me-2"></i> About</a></li>
+                    <li><a class="dropdown-item" href="faqs.html"><i class="bi bi-question-circle me-2"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- AGENT HERO -->
+<section class="agents-hero text-white text-center">
+    <div class="container position-relative">
+        <span class="badge rounded-pill bg-light text-success px-4 py-2 mb-3 text-uppercase">LuxEstate Experts</span>
+        <h1 class="display-4 fw-bold">Meet the Agents Behind Our Signature Listings</h1>
+        <p class="lead mb-0">From beachfront villas to city penthouses, our specialists guide you every step of the way.</p>
+    </div>
+</section>
+
+<!-- AGENT GRID -->
+<section class="py-5 scroll-animate">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-1">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">ST</div>
+                                <h4 class="mb-2">Sophia Turner</h4>
+                                <span class="badge bg-soft-success text-success">Senior Listing Agent</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">ST</div>
+                                <div>
+                                    <h4 class="mb-1">Sophia Turner</h4>
+                                    <span class="badge bg-soft-success text-success">Senior Listing Agent</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Specialist in trophy estates, penthouses, and waterfront escapes with curated marketing strategies for LuxEstate's flagship listings.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-gem"></i> Luxury Estates</li>
+                                <li><i class="bi bi-water"></i> Waterfront Residences</li>
+                                <li><i class="bi bi-building"></i> Sky Penthouses</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">Modern Villa</span>
+                                    <span class="agent-pill">Luxury Penthouse</span>
+                                    <span class="agent-pill">Beachfront Villa</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 123-4567</span>
+                                <span><i class="bi bi-envelope"></i> sophia@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-2">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">MR</div>
+                                <h4 class="mb-2">Michael Reyes</h4>
+                                <span class="badge bg-soft-success text-success">Luxury Condo Specialist</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">MR</div>
+                                <div>
+                                    <h4 class="mb-1">Michael Reyes</h4>
+                                    <span class="badge bg-soft-success text-success">Luxury Condo Specialist</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Guides buyers through high-rise living with deep knowledge of building amenities, HOA insights, and smart-home upgrades.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-city"></i> Downtown Towers</li>
+                                <li><i class="bi bi-houses"></i> Smart Townhomes</li>
+                                <li><i class="bi bi-key"></i> Investment Units</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">City Apartment</span>
+                                    <span class="agent-pill">Smart Townhouse</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 222-8899</span>
+                                <span><i class="bi bi-envelope"></i> michael@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-3">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">AC</div>
+                                <h4 class="mb-2">Ava Chen</h4>
+                                <span class="badge bg-soft-success text-success">Lifestyle & Design Homes Curator</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">AC</div>
+                                <div>
+                                    <h4 class="mb-1">Ava Chen</h4>
+                                    <span class="badge bg-soft-success text-success">Lifestyle & Design Homes Curator</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Combines architectural knowledge with family-focused insights to match buyers with inspired spaces tailored to their routines.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-geo-alt"></i> Neighborhood Guides</li>
+                                <li><i class="bi bi-bricks"></i> Modern Lofts</li>
+                                <li><i class="bi bi-flower3"></i> Design-Forward Homes</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">Cozy House</span>
+                                    <span class="agent-pill">Urban Loft</span>
+                                    <span class="agent-pill">Garden Duplex</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 678-3344</span>
+                                <span><i class="bi bi-envelope"></i> ava@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-4">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">LP</div>
+                                <h4 class="mb-2">Liam Patel</h4>
+                                <span class="badge bg-soft-success text-success">Estate & Retreat Specialist</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">LP</div>
+                                <div>
+                                    <h4 class="mb-1">Liam Patel</h4>
+                                    <span class="badge bg-soft-success text-success">Estate & Retreat Specialist</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Elevates countryside and mountain living with expertise in land stewardship, vineyard operations, and second-home services.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-tree"></i> Acreage & Vineyards</li>
+                                <li><i class="bi bi-house-heart"></i> Legacy Retreats</li>
+                                <li><i class="bi bi-snow"></i> Ski & Mountain Homes</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">Country Estate</span>
+                                    <span class="agent-pill">Mountain Cabin</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 901-2277</span>
+                                <span><i class="bi bi-envelope"></i> liam@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-5">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">EJ</div>
+                                <h4 class="mb-2">Emma Johnson</h4>
+                                <span class="badge bg-soft-success text-success">Commercial Real Estate Expert</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">EJ</div>
+                                <div>
+                                    <h4 class="mb-1">Emma Johnson</h4>
+                                    <span class="badge bg-soft-success text-success">Commercial Real Estate Expert</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Specializes in prime commercial properties, retail spaces, and office buildings with strategic investment insights for business growth.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-briefcase"></i> Office Buildings</li>
+                                <li><i class="bi bi-shop"></i> Retail Spaces</li>
+                                <li><i class="bi bi-graph-up"></i> Investment Properties</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">Downtown Office</span>
+                                    <span class="agent-pill">Retail Plaza</span>
+                                    <span class="agent-pill">Business Center</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 445-6677</span>
+                                <span><i class="bi bi-envelope"></i> emma@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 scroll-animate scroll-animate-delay-6">
+                <div class="agent-card-flip h-100">
+                    <div class="agent-card-inner">
+                        <div class="agent-card-front">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="avatar-circle mb-3" style="width: 120px; height: 120px; font-size: 2.5rem;">DW</div>
+                                <h4 class="mb-2">David Williams</h4>
+                                <span class="badge bg-soft-success text-success">International Properties Consultant</span>
+                            </div>
+                        </div>
+                        <div class="agent-card-back">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="avatar-circle">DW</div>
+                                <div>
+                                    <h4 class="mb-1">David Williams</h4>
+                                    <span class="badge bg-soft-success text-success">International Properties Consultant</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Connects global buyers with luxury properties worldwide, offering expertise in cross-border transactions and international real estate markets.
+                            </p>
+                            <ul class="agent-specialties">
+                                <li><i class="bi bi-globe"></i> International Markets</li>
+                                <li><i class="bi bi-passport"></i> Cross-Border Sales</li>
+                                <li><i class="bi bi-star"></i> Global Luxury Homes</li>
+                            </ul>
+                            <div class="agent-properties">
+                                <span class="text-muted small text-uppercase">Featured listings:</span>
+                                <div class="agent-tags">
+                                    <span class="agent-pill">European Villa</span>
+                                    <span class="agent-pill">Asian Penthouse</span>
+                                    <span class="agent-pill">Caribbean Resort</span>
+                                </div>
+                            </div>
+                            <div class="agent-contact">
+                                <span><i class="bi bi-telephone"></i> +1 (555) 334-5566</span>
+                                <span><i class="bi bi-envelope"></i> david@luxestate.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="stat-section text-center scroll-animate">
+    <div class="container">
+        <h2 class="fw-bold mb-3 scroll-animate scroll-animate-delay-1">Ready to Meet Your Agent?</h2>
+        <p class="mb-4">Tell us about your goals and we’ll match you with the specialist best suited to your property journey.</p>
+        <a href="contact.html" class="btn btn-light text-success px-5 py-3 fw-bold">Book a Consultation</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <h5><i class="bi bi-house-heart-fill"></i> LuxEstate</h5>
+                <p>Your premier destination for luxury real estate. We connect you with extraordinary properties that match your lifestyle and aspirations.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkdin.com" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h5><i class="bi bi-lightning-fill"></i> Quick Links</h5>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                    <li><a href="properties.html"><i class="bi bi-grid-3x2"></i> Properties</a></li>
+                    <li><a href="about.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+                    <li><a href="agents.html"><i class="bi bi-people"></i> Our Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h5><i class="bi bi-briefcase-fill"></i> Services</h5>
+                <ul>
+                    <li><a href="properties.html#fullpayproperties"><i class="bi bi-house-fill"></i>Properties sale in full payment</a></li>
+                    <li><a href="properties.html#installmentsProperties"><i class="bi bi-house-fill"></i>Properties sale in Installments</a></li>
+                    <li><a href="properties.html#rentalProperties"><i class="bi bi-key-fill"></i> Property Rentals</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#budgetCalculatorModal"><i class="bi bi-graph-up-arrow"></i> Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Support -->
+            <div class="footer-section">
+                <h5 style="font-size: 1rem;"><i class="bi bi-telephone-fill"></i> Contact Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/923007323288" target="_blank" style="font-size: 0.85rem;"><i class="bi bi-telephone"></i> +92 3007323288</a></li>
+                    <li><a href="mailto:umersaeed15991@gmail.com" style="font-size: 0.85rem;"><i class="bi bi-envelope"></i> umersaeed15991@gmail.com</a></li>
+                    <li><a href="contact.html" style="font-size: 0.85rem;"><i class="bi bi-chat-dots"></i> Send Message</a></li>
+                    <li><a href="faqs.html" style="font-size: 0.85rem;"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 LuxEstate. All Rights Reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-badge"><i class="bi bi-star-fill"></i> Trusted Since 2010</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Budget Calculator Modal -->
+<div class="modal fade" id="budgetCalculatorModal" tabindex="-1" aria-labelledby="budgetCalculatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="budgetCalculatorModalLabel"><i class="bi bi-calculator"></i> Budget Calculator</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="text-center mb-4">
+                        <p class="lead">How would you like to pay?</p>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="installments">
+                            <i class="bi bi-calendar-check me-2"></i>Installments
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="full-payment">
+                            <i class="bi bi-cash-coin me-2"></i>Full Payment
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="rent">
+                            <i class="bi bi-house-door me-2"></i>Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Handle payment option selection
+    document.querySelectorAll('.payment-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const paymentType = this.getAttribute('data-type');
+            window.location.href = `budget-form.html?type=${paymentType}`;
+        });
+    });
+</script>
+</body>
+</html>

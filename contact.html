@@ -1,0 +1,480 @@
+<!-- contact.html (Green + White Real Estate Theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-3 shadow-sm bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 header-brand">
+            <img src="logo.svg" alt="LuxEstate logo" class="header-logo">
+            <h2 class="fw-bold text-success m-0">LuxEstate</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="mx-2 text-dark"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+            <div class="dropdown properties-dropdown">
+                <a href="properties.html" class="mx-2 text-dark dropdown-toggle" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-building me-1"></i> Properties <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                    <li><a class="dropdown-item" href="#" id="calculateBudgetBtn"><i class="bi bi-calculator"></i> Calculate Budget</a></li>
+                    <li><a class="dropdown-item" href="properties.html"><i class="bi bi-grid"></i> View All Properties</a></li>
+                </ul>
+            </div>
+            <div class="dropdown properties-dropdown">
+                <a href="agents.html" class="mx-2 text-dark dropdown-toggle" id="agentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people me-1"></i> Agents <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="agentsDropdown">
+                    <li><a class="dropdown-item" href="agents.html"><i class="bi bi-people"></i> All Agents</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope"></i> Book Your Agent</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1"></i> Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Personal Info</a></li>
+                    <li><a class="dropdown-item" href="edit-profile.html"><i class="bi bi-pencil-square me-2"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="api/logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown info-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-info-circle me-1"></i> Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+                    <li><a class="dropdown-item" href="inbox.html"><i class="bi bi-inbox me-2"></i> Inbox</a></li>
+                    <li><a class="dropdown-item" href="about.html"><i class="bi bi-building me-2"></i> About</a></li>
+                    <li><a class="dropdown-item" href="faqs.html"><i class="bi bi-question-circle me-2"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="agents-hero text-white text-center">
+    <div class="container position-relative">
+        <span class="badge rounded-pill bg-light text-success px-4 py-2 mb-3 text-uppercase">Get In Touch</span>
+        <h1 class="display-4 fw-bold">Contact Us</h1>
+        <p class="lead mb-4">We're here to help you find your dream property. Reach out and let's start your journey today.</p>
+        
+        <!-- Office Hours Info -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="bg-white bg-opacity-15 backdrop-blur rounded-3 p-4" style="border: 2px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+                    <div class="row text-center g-4">
+                        <div class="row-md-6">
+                            <div>
+                                <h5 class="fw-bold mb-2"><i class="bi bi-clock-fill me-2"></i>Office Hours</h5>
+                                <p class="mb-2 small"><strong>Mon-Fri:</strong> 9:00 AM - 6:00 PM</p>
+                                <p class="mb-0 small"><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                                
+                            </div>
+                            <div>
+                                <p class="small text-warning mt-2">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT INFO CARDS -->
+<section class="py-5 scroll-animate">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            <div class="col-md-4 scroll-animate scroll-animate-delay-1">
+                <div class="stat-section text-white text-center p-4 rounded shadow-lg h-100" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
+                    <div class="mb-3">
+                        <i class="bi bi-geo-alt-fill" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Visit Us</h4>
+                    <p class="mb-0">123 Real Estate Avenue<br>Suite 500<br>New York, NY 10001</p>
+                </div>
+            </div>
+            <div class="col-md-4 scroll-animate scroll-animate-delay-2">
+                <div class="stat-section text-white text-center p-4 rounded shadow-lg h-100" style="background: linear-gradient(135deg, #27ae60 0%, #1abc9c 100%);">
+                    <div class="mb-3">
+                        <i class="bi bi-telephone-fill" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Call Us</h4>
+                    <p class="mb-2">Phone: <a href="tel:+923007323288" class="text-white text-decoration-none">+92 3007323288</a></p>
+                    <p class="mb-0">Whatsapp: <a href="https://wa.me/923007323288" target="_blank" class="text-white text-decoration-none">+92 3007323288</a></p>
+                </div>
+            </div>
+            <div class="col-md-4 scroll-animate scroll-animate-delay-3">
+                <div class="stat-section text-white text-center p-4 rounded shadow-lg h-100" style="background: linear-gradient(135deg, #1abc9c 0%, #2ecc71 100%);">
+                    <div class="mb-3">
+                        <i class="bi bi-envelope-fill" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Email Us</h4>
+                    <p class="mb-2"><a href="mailto:umersaeed15991@gmail.com" class="text-white text-decoration-none">info@luxestate.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="py-5 bg-light scroll-animate">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6 scroll-animate scroll-animate-delay-1">
+                <div class="position-relative p-5 rounded shadow-lg" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(26, 188, 156, 0.1) 100%); border: 2px solid rgba(46, 204, 113, 0.2);">
+                    <div class="text-center mb-4">
+                        <span class="badge bg-soft-success text-success mb-3">Send Us a Message</span>
+                        <h2 class="text-success fw-bold mb-3">Let's Start a Conversation</h2>
+                        <p class="text-muted">
+                            Fill out the form below and our team will get back to you within 24 hours. 
+                            We're here to answer any questions and help you find your perfect property.
+                        </p>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="p-3 rounded-circle" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                <i class="bi bi-check-circle text-white" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold text-success">Quick Response</h5>
+                                <p class="mb-0 text-muted small">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="p-3 rounded-circle" style="background: linear-gradient(135deg, #27ae60, #1abc9c);">
+                                <i class="bi bi-shield-check text-white" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold text-success">Expert Guidance</h5>
+                                <p class="mb-0 text-muted small">Professional advice from our team</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="p-3 rounded-circle" style="background: linear-gradient(135deg, #1abc9c, #2ecc71);">
+                                <i class="bi bi-heart text-white" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold text-success">Personalized Service</h5>
+                                <p class="mb-0 text-muted small">Tailored to your needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 scroll-animate scroll-animate-delay-2">
+                <div class="contact-form-container">
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-bold text-success">Full Name</label>
+                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" required style="border-color: #2ecc71;">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-bold text-success">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" id="email" placeholder="your.email@example.com" required style="border-color: #2ecc71;">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="form-label fw-bold text-success">Phone Number</label>
+                            <input type="tel" class="form-control form-control-lg" id="phone" placeholder="+1 (555) 123-4567" style="border-color: #2ecc71;">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="form-label fw-bold text-success">Subject</label>
+                            <select class="form-select form-select-lg" id="subject" required style="border-color: #2ecc71;">
+                                <option value="">Select a subject</option>
+                                <option value="buying">Buying a Property</option>
+                                <option value="selling">Selling a Property</option>
+                                <option value="renting">Renting a Property</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="selectAgent" class="form-label fw-bold text-success">
+                                <i class="bi bi-person-check me-2"></i>Select Your Agent
+                            </label>
+                            <select class="form-select form-select-lg" id="selectAgent" required style="border-color: #2ecc71;">
+                                <option value="">Select an agent</option>
+                                <option value="sophia" data-commission="2.5">Sophia Turner - Senior Listing Agent</option>
+                                <option value="michael" data-commission="2.0">Michael Reyes - Luxury Condo Specialist</option>
+                                <option value="ava" data-commission="2.2">Ava Chen - Lifestyle & Design Homes Curator</option>
+                                <option value="liam" data-commission="2.3">Liam Patel - Estate & Retreat Specialist</option>
+                                <option value="emma" data-commission="2.1">Emma Johnson - Commercial Real Estate Expert</option>
+                                <option value="david" data-commission="2.4">David Williams - International Properties Consultant</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="commissionFees" class="form-label fw-bold text-success">
+                                <i class="bi bi-cash-coin me-2"></i>Agent Commission Fees
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-success text-white fw-bold">%</span>
+                                <input type="text" class="form-control form-control-lg" id="commissionFees" placeholder="Select an agent to see commission fees" readonly style="border-color: #2ecc71; background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(27, 174, 96, 0.1));">
+                            </div>
+                            <small class="text-muted">
+                                <i class="bi bi-info-circle me-1"></i>Commission fees are automatically calculated based on selected agent
+                            </small>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-bold text-success">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Tell us how we can help you..." required style="border-color: #2ecc71;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg w-100 fw-bold" style="background: linear-gradient(135deg, #2ecc71, #27ae60); border: none; padding: 12px;">
+                            <i class="bi bi-send me-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <h5><i class="bi bi-house-heart-fill"></i> LuxEstate</h5>
+                <p>Your premier destination for luxury real estate. We connect you with extraordinary properties that match your lifestyle and aspirations.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkdin.com" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h5><i class="bi bi-lightning-fill"></i> Quick Links</h5>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                    <li><a href="properties.html"><i class="bi bi-grid-3x2"></i> Properties</a></li>
+                    <li><a href="about.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+                    <li><a href="agents.html"><i class="bi bi-people"></i> Our Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h5><i class="bi bi-briefcase-fill"></i> Services</h5>
+                <ul>
+                    <li><a href="properties.html#fullpayproperties"><i class="bi bi-house-fill"></i>Properties sale in full payment</a></li>
+                    <li><a href="properties.html#installmentsProperties"><i class="bi bi-house-fill"></i>Properties sale in Installments</a></li>
+                    <li><a href="properties.html#rentalProperties"><i class="bi bi-key-fill"></i> Property Rentals</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#budgetCalculatorModal"><i class="bi bi-graph-up-arrow"></i> Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Support -->
+            <div class="footer-section">
+                <h5 style="font-size: 1rem;"><i class="bi bi-telephone-fill"></i> Contact Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/923007323288" target="_blank" style="font-size: 0.85rem;"><i class="bi bi-telephone"></i> +92 3007323288</a></li>
+                    <li><a href="mailto:umersaeed15991@gmail.com" style="font-size: 0.85rem;"><i class="bi bi-envelope"></i> umersaeed15991@gmail.com</a></li>
+                    <li><a href="contact.html" style="font-size: 0.85rem;"><i class="bi bi-chat-dots"></i> Send Message</a></li>
+                    <li><a href="faqs.html" style="font-size: 0.85rem;"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 LuxEstate. All Rights Reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-badge"><i class="bi bi-star-fill"></i> Trusted Since 2010</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Budget Calculator Modal -->
+<div class="modal fade" id="budgetCalculatorModal" tabindex="-1" aria-labelledby="budgetCalculatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="budgetCalculatorModalLabel"><i class="bi bi-calculator"></i> Budget Calculator</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="text-center mb-4">
+                        <p class="lead">How would you like to pay?</p>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="installments">
+                            <i class="bi bi-calendar-check me-2"></i>Installments
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="full-payment">
+                            <i class="bi bi-cash-coin me-2"></i>Full Payment
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="rent">
+                            <i class="bi bi-house-door me-2"></i>Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Handle payment option selection
+    document.querySelectorAll('.payment-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const paymentType = this.getAttribute('data-type');
+            window.location.href = `budget-form.html?type=${paymentType}`;
+        });
+    });
+    
+    // Auto-update commission fees when agent is selected
+    document.getElementById('selectAgent').addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        const commissionFees = document.getElementById('commissionFees');
+        
+        if (selectedOption.value && selectedOption.dataset.commission) {
+            commissionFees.value = selectedOption.dataset.commission + '%';
+            commissionFees.style.background = 'linear-gradient(135deg, rgba(46, 204, 113, 0.15), rgba(27, 174, 96, 0.15))';
+            commissionFees.style.borderColor = '#2ecc71';
+            commissionFees.style.color = '#27ae60';
+            commissionFees.style.fontWeight = 'bold';
+        } else {
+            commissionFees.value = '';
+            commissionFees.style.background = 'linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(27, 174, 96, 0.1))';
+            commissionFees.style.borderColor = '#2ecc71';
+            commissionFees.style.color = '';
+            commissionFees.style.fontWeight = 'normal';
+        }
+    });
+    
+    // Auto-fill form with logged-in user data
+    function loadUserData() {
+        fetch('api/user/profile.php', {
+            method: 'GET',
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (response.status === 401) {
+                // User not logged in, don't fill form
+                return null;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.success && data.profile) {
+                const profile = data.profile;
+                
+                // Fill name field
+                const nameField = document.getElementById('name');
+                if (nameField && !nameField.value) {
+                    nameField.value = profile.fullName || profile.name || '';
+                }
+                
+                // Fill email field
+                const emailField = document.getElementById('email');
+                if (emailField && !emailField.value) {
+                    emailField.value = profile.email || '';
+                }
+                
+                // Fill phone field
+                const phoneField = document.getElementById('phone');
+                if (phoneField && !phoneField.value) {
+                    phoneField.value = profile.phone || '';
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error loading user data:', error);
+            // Silently fail - user might not be logged in
+        });
+    }
+    
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            subject: document.getElementById('subject').value,
+            selectAgent: document.getElementById('selectAgent').value,
+            commissionFees: document.getElementById('commissionFees').value,
+            message: document.getElementById('message').value
+        };
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+        
+        fetch('api/contact.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+                alertDiv.style.zIndex = '9999';
+                alertDiv.innerHTML = `
+                    <i class="bi bi-check-circle me-2"></i><strong>Success!</strong> Your message has been sent successfully.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(alertDiv);
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                document.getElementById('commissionFees').value = '';
+                
+                // Remove alert after 3 seconds
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 3000);
+            } else {
+                alert('Error: ' + (data.error || 'Failed to send message'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        });
+    });
+    
+    // Load user data when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        loadUserData();
+    });
+</script>
+</body>
+</html>

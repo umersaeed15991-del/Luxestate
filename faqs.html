@@ -1,0 +1,411 @@
+<!-- faqs.html - Frequently Asked Questions -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate - FAQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-3 shadow-sm bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2 header-brand">
+            <img src="logo.svg" alt="LuxEstate logo" class="header-logo">
+            <h2 class="fw-bold text-success m-0">LuxEstate</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="mx-2 text-dark"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+            <div class="dropdown properties-dropdown">
+                <a href="properties.html" class="mx-2 text-dark dropdown-toggle" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-building me-1"></i> Properties <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                    <li><a class="dropdown-item" href="#" id="calculateBudgetBtn"><i class="bi bi-calculator"></i> Calculate Budget</a></li>
+                    <li><a class="dropdown-item" href="properties.html"><i class="bi bi-grid"></i> View All Properties</a></li>
+                </ul>
+            </div>
+            <div class="dropdown properties-dropdown">
+                <a href="agents.html" class="mx-2 text-dark dropdown-toggle" id="agentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people me-1"></i> Agents <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="agentsDropdown">
+                    <li><a class="dropdown-item" href="agents.html"><i class="bi bi-people"></i> All Agents</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope"></i> Book Your Agent</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1"></i> Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Personal Info</a></li>
+                    <li><a class="dropdown-item" href="edit-profile.html"><i class="bi bi-pencil-square me-2"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="api/logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown info-dropdown">
+                <a href="#" class="mx-2 text-dark dropdown-toggle" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-info-circle me-1"></i> Info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+                    <li><a class="dropdown-item" href="inbox.html"><i class="bi bi-inbox me-2"></i> Inbox</a></li>
+                    <li><a class="dropdown-item" href="about.html"><i class="bi bi-building me-2"></i> About</a></li>
+                    <li><a class="dropdown-item" href="faqs.html"><i class="bi bi-question-circle me-2"></i> FAQs</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<!-- FAQs HERO -->
+<section class="agents-hero text-white text-center">
+    <div class="container position-relative">
+        <span class="badge rounded-pill bg-light text-success px-4 py-2 mb-3 text-uppercase">Got Questions?</span>
+        <h1 class="display-4 fw-bold">Frequently Asked Questions</h1>
+        <p class="lead mb-0">Find answers to common questions about our services, properties, and processes.</p>
+    </div>
+</section>
+
+<!-- FAQs SECTION -->
+<section class="py-5 scroll-animate">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                <i class="bi bi-question-circle text-success me-3"></i>How do I start searching for a property?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can start by browsing our <a href="properties.html" class="text-success fw-bold">Properties</a> page to see all available listings. Use our <a href="#" class="text-success fw-bold" id="calculateBudgetBtn">Budget Calculator</a> to determine your budget, and then filter properties based on your preferences. You can also contact one of our agents for personalized assistance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.1">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <i class="bi bi-question-circle text-success me-3"></i>What payment options are available?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer three flexible payment options: <strong>Installments</strong> for monthly payments, <strong>Full Payment</strong> for one-time purchase, and <strong>Rent</strong> for rental properties. You can use our Budget Calculator to explore which option works best for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.2">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <i class="bi bi-question-circle text-success me-3"></i>How do I book an agent?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can book an agent by visiting our <a href="agents.html" class="text-success fw-bold">Agents</a> page to view all available agents, or use the <a href="contact.html" class="text-success fw-bold">Book Your Agent</a> option in the Agents dropdown menu. Fill out the contact form with your details and select your preferred agent, and we'll connect you with them.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.3">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <i class="bi bi-question-circle text-success me-3"></i>What are the agent commission fees?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Commission fees vary by agent and typically range from 2.0% to 2.5% of the property value. When you <a href="contact.html" class="text-success fw-bold">book an agent</a> through our contact form, you can see the specific commission rate for each agent. All fees are transparent and discussed upfront.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.4">
+                        <h2 class="accordion-header" id="faq5">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                <i class="bi bi-question-circle text-success me-3"></i>Can I schedule a property viewing?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! You can schedule a property viewing by contacting us through our <a href="contact.html" class="text-success fw-bold">Contact</a> page or by reaching out to one of our agents directly. Simply fill out the contact form with your preferred date and time, and we'll arrange a viewing for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.5">
+                        <h2 class="accordion-header" id="faq6">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                <i class="bi bi-question-circle text-success me-3"></i>What documents do I need to purchase a property?
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Typically, you'll need: proof of identity (government-issued ID), proof of income (pay stubs, tax returns), bank statements, pre-approval letter from a lender (if financing), and any additional documents requested by your agent or lender. Our agents will guide you through the entire documentation process.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.6">
+                        <h2 class="accordion-header" id="faq7">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                <i class="bi bi-question-circle text-success me-3"></i>How long does the property purchase process take?
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The timeline varies depending on financing, inspections, and negotiations. Typically, the process takes 30-60 days from offer acceptance to closing. Cash purchases can be faster (15-30 days), while financed purchases may take longer due to loan processing. Our agents will keep you informed throughout the process.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.7">
+                        <h2 class="accordion-header" id="faq8">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                <i class="bi bi-question-circle text-success me-3"></i>Do you offer property financing assistance?
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! We work with trusted lenders and can help you explore financing options. Use our <a href="#" class="text-success fw-bold" id="calculateBudgetBtn2">Budget Calculator</a> to estimate monthly payments, and our agents can connect you with mortgage specialists to find the best rates and terms for your situation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 9 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.8">
+                        <h2 class="accordion-header" id="faq9">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                <i class="bi bi-question-circle text-success me-3"></i>What is included in the property price?
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="faq9" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The listed price typically includes the property itself and any fixtures. Additional costs may include: closing costs (2-5% of purchase price), property taxes, home insurance, HOA fees (if applicable), and inspection fees. Our agents will provide a detailed breakdown of all costs during the purchase process.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 10 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm faq-item" data-animation-delay="0.9">
+                        <h2 class="accordion-header" id="faq10">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                <i class="bi bi-question-circle text-success me-3"></i>Can I sell my property through LuxEstate?
+                            </button>
+                        </h2>
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="faq10" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! We have experienced listing agents who specialize in selling properties. Contact us through our <a href="contact.html" class="text-success fw-bold">Contact</a> page, select "Selling a Property" as your subject, and one of our agents will help you with pricing, staging, marketing, and closing your sale.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions Section -->
+                <div class="text-center mt-5 p-5 rounded faq-contact-section" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(27, 174, 96, 0.1)); border: 2px solid rgba(46, 204, 113, 0.2);">
+                    <i class="bi bi-chat-dots text-success" style="font-size: 3rem;"></i>
+                    <h3 class="fw-bold text-success mt-3 mb-3">Still Have Questions?</h3>
+                    <p class="text-muted mb-4">Our team is here to help! Reach out to us and we'll get back to you within 24 hours.</p>
+                    <a href="contact.html" class="btn btn-success btn-lg px-5">
+                        <i class="bi bi-envelope me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <h5><i class="bi bi-house-heart-fill"></i> LuxEstate</h5>
+                <p>Your premier destination for luxury real estate. We connect you with extraordinary properties that match your lifestyle and aspirations.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkdin.com" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h5><i class="bi bi-lightning-fill"></i> Quick Links</h5>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a></li>
+                    <li><a href="properties.html"><i class="bi bi-grid-3x2"></i> Properties</a></li>
+                    <li><a href="about.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+                    <li><a href="agents.html"><i class="bi bi-people"></i> Our Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h5><i class="bi bi-briefcase-fill"></i> Services</h5>
+                <ul>
+                    <li><a href="properties.html#fullpayproperties"><i class="bi bi-house-fill"></i>Properties sale in full payment</a></li>
+                    <li><a href="properties.html#installmentsProperties"><i class="bi bi-house-fill"></i>Properties sale in Installments</a></li>
+                    <li><a href="properties.html#rentalProperties"><i class="bi bi-key-fill"></i> Property Rentals</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#budgetCalculatorModal"><i class="bi bi-graph-up-arrow"></i> Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Support -->
+            <div class="footer-section">
+                <h5 style="font-size: 1rem;"><i class="bi bi-telephone-fill"></i> Contact Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/923007323288" target="_blank" style="font-size: 0.85rem;"><i class="bi bi-telephone"></i> +92 3007323288</a></li>
+                    <li><a href="mailto:umersaeed15991@gmail.com" style="font-size: 0.85rem;"><i class="bi bi-envelope"></i> umersaeed15991@gmail.com</a></li>
+                    <li><a href="contact.html" style="font-size: 0.85rem;"><i class="bi bi-chat-dots"></i> Send Message</a></li>
+                    <li><a href="faqs.html" style="font-size: 0.85rem;"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 LuxEstate. All Rights Reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-badge"><i class="bi bi-star-fill"></i> Trusted Since 2010</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Budget Calculator Modal -->
+<div class="modal fade" id="budgetCalculatorModal" tabindex="-1" aria-labelledby="budgetCalculatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="budgetCalculatorModalLabel"><i class="bi bi-calculator"></i> Budget Calculator</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="text-center mb-4">
+                        <p class="lead">How would you like to pay?</p>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="installments">
+                            <i class="bi bi-calendar-check me-2"></i>Installments
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="full-payment">
+                            <i class="bi bi-cash-coin me-2"></i>Full Payment
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg payment-option" data-type="rent">
+                            <i class="bi bi-house-door me-2"></i>Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script>
+    // Handle payment option selection
+    document.querySelectorAll('.payment-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const paymentType = this.getAttribute('data-type');
+            window.location.href = `budget-form.html?type=${paymentType}`;
+        });
+    });
+    
+    // Budget Calculator button handlers
+    document.getElementById('calculateBudgetBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modal = new bootstrap.Modal(document.getElementById('budgetCalculatorModal'));
+        modal.show();
+    });
+    
+    document.getElementById('calculateBudgetBtn2')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modal = new bootstrap.Modal(document.getElementById('budgetCalculatorModal'));
+        modal.show();
+    });
+    
+    // FAQ Animation on Scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const faqObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-animation-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('faq-animated');
+                }, delay * 1000);
+                faqObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        faqObserver.observe(item);
+    });
+    
+    // Observe contact section
+    const contactSection = document.querySelector('.faq-contact-section');
+    if (contactSection) {
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('faq-contact-animated');
+                    contactObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        contactObserver.observe(contactSection);
+    }
+    
+    // Add smooth accordion expand animation
+    document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.style.transform = 'rotate(360deg)';
+                setTimeout(() => {
+                    icon.style.transform = '';
+                }, 300);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
