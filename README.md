@@ -1,21 +1,5 @@
-# Images Directory Structure
 
-This folder contains all images used in the LuxEstate website.
 
-## Folder Structure
-
-```
-images/
-├── hero/           # Hero section background images
-│   └── hero1.jpg   # Main hero background image
-├── properties/     # Property listing images
-│   ├── p1.jpg      # Property 1 (Modern Villa)
-│   ├── p2.jpg      # Property 2 (City Apartment)
-│   └── p3.jpg      # Property 3 (Cozy House)
-├── about/          # About page images
-│   └── about.jpg   # About section image
-└── logo.svg        # LuxEstate logo (SVG format)
-```
 
 ## Image Requirements
 
@@ -56,4 +40,5 @@ If you need to replace any images:
 2. Keep similar aspect ratios for best display
 3. Optimize images for web (compress JPG files)
 4. Ensure images are high quality but web-optimized
+
 
